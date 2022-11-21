@@ -21,14 +21,37 @@
     android:key="top_level_settings">
 
     <com.android.settings.widget.HomepagePreference
-        android:fragment="com.android.settings.network.NetworkDashboardFragment"
-        android:icon="@drawable/ic_settings_wireless"
-        android:key="top_level_network"
-        android:order="-150"
-        android:title="@string/network_dashboard_title"
+        android:fragment="com.android.settings.DisplaySettings"
+        android:icon="@drawable/ic_settings_display_white"
+        android:key="top_level_display"
+        android:order="-80"
+        android:title="@string/display_settings"
+        android:summary="@string/display_dashboard_summary"
+        settings:highlightableMenuKey="@string/menu_key_display"
+        settings:controller="com.android.settings.display.TopLevelDisplayPreferenceController"/>
+
+    <com.android.settings.widget.HomepagePreference
+        android:fragment="com.android.settings.accounts.AccountDashboardFragment"
+        android:icon="@drawable/ic_settings_accounts"
+        android:key="top_level_accounts"
+        android:order="-10"
+        android:title="@string/account_dashboard_title"
         android:summary="@string/summary_placeholder"
-        settings:highlightableMenuKey="@string/menu_key_network"
-        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
+        settings:highlightableMenuKey="@string/menu_key_accounts"
+        settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController"/>
+
+    <com.android.settings.widget.PrimarySwitchPreference
+        android:fragment="com.android.settings.wifi.WifiSettings"
+        android:key="main_toggle_wifi"
+        android:title="@string/wifi_settings"
+        android:summary="@string/summary_placeholder"
+        android:icon="@drawable/ic_settings_wireless"
+        android:order="-30"
+        settings:allowDividerAbove="true">
+        <intent
+            android:action="android.settings.WIFI_SETTINGS"
+            android:targetClass="Settings$WifiSettingsActivity" />
+    </com.android.settings.widget.PrimarySwitchPreference>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
@@ -51,34 +74,6 @@
         settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
-        android:fragment="com.android.settings.privacy.PrivacyDashboardFragment"
-        android:icon="@drawable/ic_settings_privacy"
-        android:key="top_level_privacy"
-        android:order="-40"
-        android:title="@string/privacy_dashboard_title"
-        android:summary="@string/privacy_dashboard_summary"
-        settings:highlightableMenuKey="@string/menu_key_privacy"/>
-
-    <com.android.settings.widget.HomepagePreference
-        android:fragment="com.android.settings.accounts.AccountDashboardFragment"
-        android:icon="@drawable/ic_settings_accounts"
-        android:key="top_level_accounts"
-        android:order="-10"
-        android:title="@string/account_dashboard_title"
-        android:summary="@string/summary_placeholder"
-        settings:highlightableMenuKey="@string/menu_key_accounts"
-        settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController"/>
-
-    <com.android.settings.widget.HomepagePreference
-        android:fragment="com.android.settings.system.SystemDashboardFragment"
-        android:icon="@drawable/ic_settings_system_dashboard_white"
-        android:key="top_level_system"
-        android:order="10"
-        android:title="@string/header_category_system"
-        android:summary="@string/system_dashboard_summary"
-        settings:highlightableMenuKey="@string/menu_key_system"/>
-
-    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
         android:icon="@drawable/ic_phone_info"
         android:key="top_level_about_device"
@@ -89,12 +84,13 @@
         settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
-        android:icon="@drawable/ic_help"
-        android:key="top_level_support"
-        android:order="100"
-        android:title="@string/page_tab_title_support"
-        android:summary="@string/support_summary"
-        settings:highlightableMenuKey="@string/menu_key_support"
-        settings:controller="com.android.settings.support.SupportPreferenceController"/>
+        android:fragment="com.android.settings.security.SecuritySettings"
+        android:icon="@drawable/ic_settings_security_white"
+        android:key="top_level_security"
+        android:order="-50"
+        android:title="@string/security_settings_title"
+        android:summary="@string/security_dashboard_summary"
+        settings:highlightableMenuKey="@string/menu_key_security"
+        settings:controller="com.android.settings.security.TopLevelSecurityEntryPreferenceController"/>
 
 </PreferenceScreen>
