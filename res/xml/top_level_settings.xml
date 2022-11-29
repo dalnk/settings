@@ -39,19 +39,16 @@
         android:summary="@string/summary_placeholder"
         settings:highlightableMenuKey="@string/menu_key_accounts"
         settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController"/>
-
-    <com.android.settings.widget.PrimarySwitchPreference
-        android:fragment="com.android.settings.wifi.WifiSettings"
-        android:key="main_toggle_wifi"
-        android:title="@string/wifi_settings"
-        android:summary="@string/summary_placeholder"
+    
+    <com.android.settings.widget.HomepagePreference
+        android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
-        android:order="-30"
-        settings:allowDividerAbove="true">
-        <intent
-            android:action="android.settings.WIFI_SETTINGS"
-            android:targetClass="Settings$WifiSettingsActivity" />
-    </com.android.settings.widget.PrimarySwitchPreference>
+        android:key="top_level_network"
+        android:order="-150"
+        android:title="@string/network_dashboard_title"
+        android:summary="@string/summary_placeholder"
+        settings:highlightableMenuKey="@string/menu_key_network"
+        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
