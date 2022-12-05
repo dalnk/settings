@@ -62,15 +62,6 @@
         settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
-        android:fragment="com.android.settings.privacy.PrivacyDashboardFragment"
-        android:icon="@drawable/ic_settings_privacy"
-        android:key="top_level_privacy"
-        android:order="-40"
-        android:title="@string/privacy_dashboard_title"
-        android:summary="@string/privacy_dashboard_summary"
-        settings:highlightableMenuKey="@string/menu_key_privacy"/>
-
-    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.accounts.AccountDashboardFragment"
         android:icon="@drawable/ic_settings_accounts"
         android:key="top_level_accounts"
